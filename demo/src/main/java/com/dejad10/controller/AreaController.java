@@ -1,4 +1,4 @@
-package controller;
+package com.dejad10.controller;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import domain.Area;
-import service.AreaService;
+import com.dejad10.domain.Area;
+import com.dejad10.service.AreaService;
 
 @RestController
-@RequestMapping("/areas")
+@RequestMapping("areas")
 public class AreaController {
 
     @Autowired
@@ -27,9 +27,10 @@ public class AreaController {
         System.out.println(area);
         return new ResponseEntity<>(createdArea, HttpStatus.CREATED);
     }
-    
+
     @GetMapping
     public List<Area> getAreas (){
     	return areaService.getAreas();
     }
+    
 }

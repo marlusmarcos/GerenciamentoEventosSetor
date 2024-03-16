@@ -1,9 +1,12 @@
-package domain;
+package com.dejad10.domain;
+
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -15,6 +18,9 @@ public class Area {
 	private int id;
 	
 	private int numero;
+	
+	@OneToMany
+	private List<Setor> setores;
 
 	public int getId() {
 		return id;
