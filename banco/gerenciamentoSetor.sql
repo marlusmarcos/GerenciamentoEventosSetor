@@ -62,3 +62,6 @@ CREATE TRIGGER trigger_atualizar_valor_total_pago
 AFTER INSERT OR UPDATE OF valor_recebido ON PessoaPagamento
 FOR EACH ROW
 EXECUTE PROCEDURE atualizar_valor_total_pago(); -- Corrigindo a chamada da função
+insert into area (numero) values (4);
+insert into setor (numero, area_id) values (10,1);
+insert into congregacao (nome, setor_id) values ('Santarem Bairro', 1);
