@@ -1,11 +1,14 @@
 package com.dejad10.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +24,17 @@ public class Setor {
 	@ManyToOne
     @JoinColumn(name = "area_id")
 	private Area area;
+	
+	@OneToMany
+	private List<Congregacao> congregacao;
+
+	public List<Congregacao> getCongregacao() {
+		return congregacao;
+	}
+
+	public void setCongregacao(List<Congregacao> congregacao) {
+		this.congregacao = congregacao;
+	}
 
 	public int getId() {
 		return id;
